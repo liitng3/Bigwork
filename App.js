@@ -86,7 +86,7 @@ const App = () => {
                   hideNavBar
                   activeTintColor='#f23636'
                   inactiveTintColor='#666666'
-                  tabBarStyle={{backgroundColor:'#ffffff',height:60}}
+                  tabBarStyle={{backgroundColor:'#ffffff',height:49}}
                 >
                   
                     <Scene key='home'

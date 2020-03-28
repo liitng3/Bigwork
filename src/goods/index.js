@@ -10,7 +10,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { Icon} from '@ant-design/react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 export default class List extends Component {
   render() {
@@ -39,7 +39,7 @@ export default class List extends Component {
                     }}
                     />
                     <TouchableOpacity style={{width:50,height:50,borderRadius:20,marginLeft:10,backgroundColor:'#f4f4f4',alignItems:'center',justifyContent:'center'}}>
-                        <Icon name="search" color='gray'/>
+                        <Icon name="search1" size={28} color="gray"/>
                     </TouchableOpacity>
                 </View>
                 
@@ -70,7 +70,7 @@ export default class List extends Component {
               <View style={{
                 flexDirection:'row',
                 justifyContent:'space-evenly',
-                flexWrap:'wrap'
+                flexWrap:'wrap',
               }}>
                 <View style={styles.box}>
                   <Image
@@ -108,7 +108,7 @@ export default class List extends Component {
                         <Text style={styles.txt1}>Oishi/上好佳玉米卷20包膨化休闲食品Oishi/上好佳</Text>
                         <Text style={styles.txt2}>36.00</Text>
                 </View>
-                <View style={styles.box}>
+                <View style={styles.box1}>
                   <Image
                       source={require('../../assets/1.gif')}
                       style={styles.img1}
@@ -117,7 +117,7 @@ export default class List extends Component {
                   <Text style={styles.txt1}>Oishi/上好佳玉米卷20包膨化休闲食品Oishi/上好佳</Text>
                   <Text style={styles.txt2}>36.00</Text>
                 </View> 
-                <View style={styles.box}>
+                <View style={styles.box1}>
                   <Image
                       source={require('../../assets/2.gif')}
                       style={styles.img2}
@@ -137,7 +137,15 @@ export default class List extends Component {
 }
 const styles = StyleSheet.create({
     box: {
-      height:280,
+      height:300,
+      width:"45%",
+      marginTop:18,
+      backgroundColor:'#ffffff',
+      alignItems:'center',
+  
+    },
+    box1: {
+      height:340,
       width:"45%",
       marginTop:18,
       backgroundColor:'#ffffff',
@@ -145,12 +153,12 @@ const styles = StyleSheet.create({
   
     },
     img1:{
-      marginTop:35,
+      marginTop:45,
       width:105,
       height:140,
     },
     img2:{
-      marginTop:35,
+      marginTop:45,
       width:125,
       height:140,
     },
@@ -163,7 +171,7 @@ const styles = StyleSheet.create({
     txt2:{
       fontSize:15,
       marginTop:10,
-      marginLeft:-160,
+      marginLeft:-100,
       color:"red"
     },
   

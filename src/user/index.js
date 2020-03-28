@@ -81,7 +81,7 @@ export default class My extends Component {
                     <Text style={{fontSize:18,color:'#4f4e4e'}}>收货地址</Text>
                 </View>
                 <View style={{width:width*0.3,height:80,alignItems:'center',justifyContent:'center'}}>
-                <Icon name="message" size={30} style={{color:'#4f4e4e',marginBottom:5}}/>
+                <Icon name="customerservice" size={30} style={{color:'#4f4e4e',marginBottom:5}}/>
                     <Text style={{fontSize:18,color:'#4f4e4e'}}>我的信息</Text>
                 </View>
                 <View style={{width:width*0.3,height:80,alignItems:'center',justifyContent:'center'}}>

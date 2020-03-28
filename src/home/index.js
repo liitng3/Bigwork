@@ -31,7 +31,7 @@ export default class Home extends Component {
                     
                 </View>
                 <TouchableOpacity style={{marginTop:3,width:50,height:50,borderRadius:20,marginLeft:10,backgroundColor:'#f23030',alignItems:'center',justifyContent:'center'}}>
-                    <Icon name="shopping-cart" size={33} color="white" />
+                    <Icon name="shopping-cart" size={30} color="white" />
                 </TouchableOpacity>
             </View>
 
