@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BackHandler,View, Text, Image, TextInput, AsyncStorage, TouchableOpacity,ToastAndroid} from 'react-native';
+import {BackHandler,View, Text, Image, TextInput, AsyncStorage, TouchableOpacity,ToastAndroid, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
 import {myFetch} from '../utils'
@@ -19,6 +19,7 @@ export default class Login extends Component {
         this.setState({pwd:text})
     }
     login = ()=>{
+      if(this.state.username!="" && this.state.pwd!="" && this.state.phone!=""){
         this.setState({isloading:true})
         myFetch.post('/login',{
             username:this.state.username,
@@ -26,13 +27,23 @@ export default class Login extends Component {
           }
         )
         .then(res=>{
-          console.log(res.data)
-          AsyncStorage.setItem('user',JSON.stringify(res.data))
-              .then(()=>{
-                  this.setState({isloading:false})
-                  Actions.lightbox();
-              })
-          })
+          if(res.data.token=='2'){
+            this.setState({isloading:false})
+            Alert.alert("该用户不存在")
+          }
+          else{
+            AsyncStorage.setItem('user',JSON.stringify(res.data))
+            .then(()=>{
+                this.setState({isloading:false})
+                Actions.lightbox();
+            })
+          }
+         
+        })
+      }
+      else{
+        Alert.alert("输入项不可为空")
+      }
     } 
   render() {
     let now = 0;
@@ -62,7 +73,7 @@ export default class Login extends Component {
               paddingLeft: 20,
             }}>
             <Icon name="user" size={30} color="#900" />
-            <TextInput placeholder="用户名" style={{fontSize:25}}
+            <TextInput placeholder="用户名" style={{fontSize:25,width: '100%'}}
                 onChangeText={this.userhandle}
             />
           </View>
@@ -79,7 +90,7 @@ export default class Login extends Component {
             }}>
             <Icon name="lock" size={30} color="#900" />
             <TextInput 
-                style={{fontSize:25}}
+                style={{fontSize:25,width: '100%'}}
                 onChangeText={this.pwdhandle}
                 placeholder="密码" 
                 secureTextEntry={true}

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen'
-import {StyleSheet,View,Text, Image, BackHandler,ToastAndroid,AsyncStorage,TouchableOpacity} from 'react-native';
+import {StyleSheet,View,Text, Image, BackHandler,ToastAndroid,AsyncStorage,TouchableOpacity, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Router, Overlay, Scene, Tabs, Drawer, Lightbox, Modal, Actions} from 'react-native-router-flux';
 import User from './src/user/index';
@@ -94,7 +94,7 @@ const App = () => {
                       title='首页'
                       icon={
                         ({focused})=>
-                        <Icon name="home" size={30}  color={focused?'#f23636':'#666666'}/>
+                        <Icon name="home" size={27}  color={focused?'#f23636':'#666666'}/>
                       }
                     >
                       <Scene key='home' component={Home}/>
@@ -107,7 +107,7 @@ const App = () => {
                       title="商品分类"
                       icon={
                         ({focused})=>
-                        <Icon name="shopping-bag" size={30}  color={focused?'#f23636':'#666666'}/>
+                        <Icon name="shopping-bag" size={27}  color={focused?'#f23636':'#666666'}/>
                       }
                     >
                       <Scene key='goods' component={Goods} />
@@ -122,7 +122,7 @@ const App = () => {
                       title='个人中心'
                       icon={
                         ({focused})=>
-                        <Icon name="user" size={30}  color={focused?'#f23636':'#666666'}/>
+                        <Icon name="user" size={27}  color={focused?'#f23636':'#666666'}/>
                       }
                     >
                       <Scene key='user' component={User}/>

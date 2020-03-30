@@ -5,8 +5,11 @@ import {View, Text, Image,Dimensions, AsyncStorage,ScrollView,TouchableOpacity} 
 import ImagePicker from 'react-native-image-picker';
 import { Actions } from 'react-native-router-flux';
 const options = {
-    title: 'Select Avatar',
-    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+    title:'选择图片',
+    cancelButtonTitle:'取消',
+    takePhotoButtonTitle:'拍照',
+    chooseFromLibraryButtonTitle:'相册',
+    allowsEditing:true,
     storageOptions: {
       skipBackup: true,
       path: 'images',
@@ -51,8 +54,13 @@ export default class My extends Component {
           });
     }
     quit=()=>{
-        AsyncStorage.clear();
-        Actions.login();
+        AsyncStorage.removeItem('user',(error)=>{
+            if (error) {
+            }else {
+                console.log("退出登录")
+                Actions.login();
+            }
+        })
     }
   render() {
     return (
