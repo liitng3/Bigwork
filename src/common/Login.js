@@ -46,17 +46,6 @@ export default class Login extends Component {
       }
     } 
   render() {
-    let now = 0;
-      BackHandler.addEventListener('hardwareBackPress', () => {
-        let time = Date.now()
-        if (time - now <= 2000) {
-            BackHandler.exitApp()
-        } else {
-            ToastAndroid.show('确定要退出吗',100);
-            now = new Date().getTime();
-            return true;
-        }
-    })
     return (
       <View style={{flex: 1,justifyContent: 'center'}}>
         <View

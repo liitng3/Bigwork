@@ -58,7 +58,7 @@ export default class My extends Component {
             if (error) {
             }else {
                 console.log("退出登录")
-                Actions.login();
+                Actions.replace("login");
             }
         })
     }

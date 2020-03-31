@@ -14,7 +14,7 @@ console.disableYellowBox = true;
 
 
 const App = () => {
-  let [isLogin,setLogin] = useState(false);
+  	let [isLogin,setLogin] = useState(false);
 	let [isInstall,setInstall] = useState(true);
 	let now = 0;
 	let init = ()=>{
@@ -54,7 +54,7 @@ const App = () => {
 	
     <Router
 			backAndroidHandler={()=>{
-				if(Actions.currentScene != 'home'){
+				if(Actions.currentScene != 'home'&& Actions.currentScene != 'login'){
 					Actions.pop();
 					return true;
 				}else{
